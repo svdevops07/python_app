@@ -3,7 +3,7 @@ RUN apt update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y -q python-all python-pip
 ADD app/requirements.txt /tmp
 RUN pip install -qr /tmp/requirements.txt
-ADD app/* /opt/webapp
+ADD app/* /opt/webapp/
 EXPOSE 5000
 CMD ["/opt/webapp/app.py"]
 ENTRYPOINT ["python"]
